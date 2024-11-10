@@ -1,17 +1,18 @@
 #include <iostream>
-#include <iomanip>                      // kirjasto desimaalien määrän asettamiseen
+#include <iomanip>
 
-int calcsum(int a, int b) {             // summan laskemiseen
-    return a + b;
+void calcSum(int a, int b) {
+    int summa = a + b;
+    std::cout << "Summa: " << summa << std::endl;
 }
 
-double calcdiv(int a, int b) {          // osamäärän laskemiseen
-    if (b ==0) {
-        std::cerr << "virhe. Jakaja ei nyt saa olla nolla." << std::endl;
-        return 0;
+void calcDiv(int a, int b) {
+    if (b == 0) {
+        std::cerr << "virheilmoitus, koska niin käskettiin, jos jakaja on nolla ." << std::endl;
+        return;
     }
     double osamaara = static_cast<double>(a) / b;
-    std::cout << "osamäärä: " << std::fixed << std::setprecision(2) << osamaara << std::endl;
+    std::cout << "Osamäärä: " << std::fixed << std::setprecision(2) << osamaara << std::endl;
 }
 
 int retSum(int a, int b) {
@@ -20,8 +21,8 @@ int retSum(int a, int b) {
 
 float retDiv(int a, int b) {
     if (b == 0) {
-        std::cerr << "Virhe: Ei sitä nollaa." << std::endl;
-        return 0;
+        std::cerr << "virheilmoitus, koska niin käskettiin, jos jakaja on nolla." << std::endl;
+        return 0.0;
     }
     return static_cast<float>(a) / b;
 }
@@ -29,20 +30,18 @@ float retDiv(int a, int b) {
 int main() {
     int a, b;
 
-    std::cout << "Anna kaksi kokonaislukua (a ja b): ";
+    std::cout << "Anna kokonaisluvut (a ja b): ";
     std::cin >> a >> b;
 
-    int summa1 = calcsum(a, b);
-    double osamaara1 = calcdiv(a, b);
+    calcSum(a, b);
+    calcDiv(a, b);
 
-    int summa2 = retSum(a, b);
-    float osamaara2 = retDiv(a, b);
+    int summa = retSum(a, b);
+    float osamaara = retDiv(a, b);
 
-    std::cout << "Summa (calcsum): " << summa1 << std::endl;
-    std::cout << "Osamäärä (calcdiv): " << std::fixed << std::setprecision(2) << osamaara1 << std::endl;
-
-    std::cout << "Summa (retSum): " << summa2 << std::endl;
-    std::cout << "Osamäärä (retDiv): " << std::fixed << std::setprecision(2) << osamaara2 << std::endl;
+    std::cout << "Summa (retSum): " << summa << std::endl;
+    std::cout << "Osamäärä (retDiv): " << std::fixed << std::setprecision(2) << osamaara << std::endl;
 
     return 0;
 }
+
