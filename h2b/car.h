@@ -1,7 +1,7 @@
 #ifndef CAR_H
 #define CAR_H
 
-#include <Car.h>
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -13,10 +13,8 @@ private:
     int yearModel;
 
 public:
-void setBrand(string br);
-void setModel(string mo);
-void setYearModel(int ye);
-void printData();
+    Car(string br, string mo, int ye);
+    void printData() const;
 };
 
 #endif // CAR_H

@@ -1,16 +1,9 @@
-#include "car.h"
-#include <iostream>
+#include "Car.h"
 
-void Car::setBrand(string br) {
-    brand = br;
-}
-void Car::setModel(string mo) {
-    model = mo;
-}
-void Car::setYearModel(int ye) {
-    yearModel = ye;
-}
-void Car::printData() {
+
+Car::Car(string br, string mo, int ye) : brand(br), model(mo), yearModel(ye) {}
+
+void Car::printData() const{
     cout << "Brand: " << brand << endl;
     cout << "Model: " << model << endl;
     cout << "Year: " << yearModel << endl;
