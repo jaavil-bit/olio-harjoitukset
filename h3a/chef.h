@@ -15,7 +15,6 @@ public:
     void makeSalad();
     void makeSoup();
 
-protected:  // Muutin "private:" funktion "protected" funktioksi, jotta aliluokka voi käyttää "name" muuttujaa
     string name;
 };
 
